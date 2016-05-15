@@ -10,7 +10,13 @@ fi
 
 # User specific aliases and functions
 
+alias sc='systemctl'
+alias psc='ps xawf -eo pid,user,cgroup:80,args'
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+export CDPATH=".:~/projects:~/projects/customers"
+
+# Setup awscli
+complete -C '/usr/bin/aws_completer' aws
+
+# Date formatting in history
+export HISTTIMEFORMAT='[%b %d %R]  '
