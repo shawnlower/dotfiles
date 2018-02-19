@@ -1,0 +1,21 @@
+set background=dark
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set nu
+set ruler
+set textwidth=80
+set smartindent
+
+
+"execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+"For markdown files, automatically launch an in-buffer lynx session to preview the doc
+autocmd FileType markdown nnoremap <buffer> <Enter> :terminal ++close bash -c "markdown_py % \| lynx -stdin -vikeys" <Enter>
+
+"Tabs
+map <C-T> <ESC>:tabnew<Enter>
+map <C-j> <ESC>:tabnext<Enter>
+map <C-k> <ESC>:tabprev<Enter>
