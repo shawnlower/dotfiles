@@ -1,0 +1,12 @@
+_pj_complete() 
+{
+    local cur prev
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    local names=$(for x in $(ls -1 $PJ_DIR); do echo ${x/\/etc\/xen\//} ; done )
+    COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
+    return 0
+}
+
