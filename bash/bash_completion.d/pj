@@ -9,4 +9,4 @@ _pj_complete()
     COMPREPLY=( $(compgen -W "${names}" -- ${cur}) )
     return 0
 }
-
+complete -F _pj_complete pj
