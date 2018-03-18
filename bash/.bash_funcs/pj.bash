@@ -37,7 +37,7 @@ fi
 function pj(){
     if [[ $# -ne 1 ]]; then
         usage
-        exit 1
+        return
     fi
 
     export PJ_NAME=$1
@@ -58,5 +58,6 @@ function pj(){
 }
 
 function usage(){
-  echo "Usage: source $0; pj my_project" >&2
+  echo "pj: Start work on a project." >&2
+  echo "Usage: pj my_project" >&2
 }
