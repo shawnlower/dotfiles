@@ -37,7 +37,7 @@ fi
 function pj(){
     if [[ $# -ne 1 ]]; then
         usage
-        return
+        return 1
     fi
 
     export PJ_NAME=$1
@@ -45,7 +45,7 @@ function pj(){
     dir=${PJ_DIR}/${PJ_NAME}
     if [[ ! -d "$dir" ]]; then
         echo "Missing project dir: $dir"
-        exit 1
+        return 1
     fi
 
     cd $dir
