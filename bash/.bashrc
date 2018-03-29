@@ -13,6 +13,11 @@ fi
 alias sc='systemctl'
 alias psc='ps xawf -eo pid,user,cgroup:80,args'
 
+# Prefer vimx (from vim-X11), to get clipboard support
+# note: vimx != gVim
+# ex to copy selection to clipboard: "+y  /  "*y
+if which vimx &>/dev/null; then alias vim='vimx'; fi
+
 # enable ** for recursive matching
 shopt -s globstar
 
