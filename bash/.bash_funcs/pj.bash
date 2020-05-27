@@ -51,7 +51,7 @@ function pj(){
     cd $dir
     for pj_init in "$PJ_DIR/.pj/common.sh" "$dir/.pj_init.sh"; do
         if [[ -f $pj_init ]]; then
-            echo "Found project script: $pj_init" >&2
+            # echo "Found project script: $pj_init" >&2
             source $pj_init
         fi
     done

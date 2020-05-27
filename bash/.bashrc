@@ -36,7 +36,7 @@ function t(){
 bind 'set match-hidden-files off'
 
 # Refactor app-specific bash includes
-for file in $HOME/.bash_funcs.d/*.{ba,}sh; do
+for file in $HOME/.bashrc.d/*.{ba,}sh; do
     source $file
 done
 
@@ -54,6 +54,8 @@ if [ ! -z "${PS1##*$__git_ps1*}" ] ; then
     PS1='$(__git_ps1) '"$PS1"
 fi
 
-
 # Date formatting in history
 export HISTTIMEFORMAT='[%b %d %R]  '
+
+# Kubernetes / k8s config
+alias k='kubectl'
